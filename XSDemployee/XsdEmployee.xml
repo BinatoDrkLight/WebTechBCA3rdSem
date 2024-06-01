@@ -1,0 +1,101 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="root"/>
+    <xs:element name="employee" type="info"/>
+    <xs:element name="student" type="info1"/>
+    <xs:element name="employe" type="info1"/>
+    <xs:element name="user" type="info1"/>
+        <xs:complexType name="info">
+            <xs:sequence>
+                <xs:element name="name">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:minLength value="8"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <xs:element name="age">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                            <xs:minInclusive value="5"/>
+                            <xs:maxInclusive value="60"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <xs:element name="email">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="[a-z0-9]{3}@[a-z0-9]{3}\.com"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <xs:element name="password">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                            <xs:totalDigits value="20"/> 
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <xs:element name="address">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="20"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+   
+        <xs:complexType name="info1">
+            <xs:sequence>
+                <xs:element name="id" type="xs:integer"/>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="address" type="xs:string"/>
+                <xs:element name="phone">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:length value="10"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+</xs:schema>
+
+
+<!--
+<root>
+    <employee>
+        <name>BineshDon</name>
+        <age>19</age>
+        <email>bdk@edu.com</email>
+        <password>24356782</password>
+        <address>Special</address>
+    </employee>
+
+    <student>
+        <id>1</id>
+        <name>Binato</name>
+        <address>Special</address>
+        <phone>9823820865</phone>
+    </student>
+
+
+     <employe>
+        <id>2</id>
+        <name>Minato</name>
+        <address>Konoha</address>
+        <phone>9820722222</phone>
+    </employe>
+
+     <user>
+        <id>3</id>
+        <name>Rezerex</name>
+        <address>unknown</address>
+        <phone>0000000000</phone>
+    </user>
+</root>
+-->
